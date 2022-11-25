@@ -4,7 +4,7 @@
         <input 
             class="input "
             [formControl]="control"
-            [ngClass]="{'is-danger': control.dirty && control.touched && control.errors}"
+            [ngClass]="{'is-danger': showErrors()}"
         />
     </div>
     <ng-container 
@@ -27,9 +27,9 @@
         characters long, but it cannot be longer than {{ control.errors['maxlength'].requiredLength }}
         characters.
     </div>
-    <!-- <div class="help is-danger" *ngIf="control.errors?.['pattern']">
+    <div class="help is-danger" *ngIf="control.errors?.['pattern']">
         Invalid format
-    </div> -->
+    </div>
 </ng-container>
 </div>
 
